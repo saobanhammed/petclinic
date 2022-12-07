@@ -4,10 +4,14 @@ phases:
   install:
     runtime-versions:
       java: openjdk8
-    pre_build
+    pre_build:
       commands:
         - echo Nothing to do in prebuild
     build:
+      commands:
+        - echo Build completed on 'date'
+        - mvn package
+    post_build:
       commands:
         - echo Build completed on 'date'
 artifacts:
